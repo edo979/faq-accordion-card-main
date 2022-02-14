@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site](https://edo979.github.io/faq-accordion-card-main/)
 
 ## My process
 
@@ -38,8 +38,6 @@ Users should be able to:
 
 - Sass
 - HTML
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
