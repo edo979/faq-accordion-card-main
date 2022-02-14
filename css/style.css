@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background-image: linear-gradient(#af67e9, #6565e7);
+}
+
+@media (min-width: 980px) {
+  body {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.card {
+  width: 330px;
+  padding: 0 25px 50px;
+  margin: 150px auto 50px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  background-color: white;
+}
+
+.card-image {
+  position: relative;
+  padding: 20px;
+  height: 100px;
+}
+
+.card-image::before, .card-image::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: calc(100% - 40px);
+}
+
+.card-image::before {
+  top: 0px;
+  height: 100%;
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.card-image::after {
+  top: 25px;
+  height: 212px;
+  background-image: url("../images/illustration-woman-online-mobile.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+}
+
+.card-image img {
+  -webkit-transform: translateY(-155px);
+          transform: translateY(-155px);
+}
+
+.card-header {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #1d1e35;
+}
+
+.card-body .faq {
+  padding: 20px 0;
+  border-bottom: 1px solid #e7e7e9;
+  overflow: hidden;
+}
+
+.card-body .faq input {
+  display: none;
+}
+
+.card-body .faq label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  color: #4a4b5e;
+}
+
+.card-body .faq label img {
+  width: auto;
+  height: 7.5px;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.card-body .faq p {
+  height: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.card-body .faq input:checked + label {
+  font-weight: 700;
+  color: #1d1e35;
+}
+
+.card-body .faq input:checked + label img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.card-body .faq input:checked + label + p {
+  height: 100%;
+  padding: 15px 20px 0 0;
+  font-size: 1rem;
+  color: #787887;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media (min-width: 980px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: 920px;
+    margin: auto;
+    padding: 30px 90px 80px;
+    z-index: 1;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    left: -72px;
+    top: 195px;
+    height: 150px;
+    width: 150px;
+    background-image: url("../images/illustration-box-desktop.svg");
+    background-position: top;
+    z-index: 2;
+  }
+  .card-image {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .card-image::before {
+    width: 880px;
+    height: 850px;
+    left: -470px;
+    top: -260px;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .card-image::after {
+    top: 30px;
+    left: -80px;
+    width: 480px;
+    height: 370px;
+    background-image: url("../images/illustration-woman-online-desktop.svg");
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  .card-image img {
+    width: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .card-body {
+    margin-left: auto;
+    width: 50%;
+  }
+  .card-header {
+    text-align: left;
+  }
+}

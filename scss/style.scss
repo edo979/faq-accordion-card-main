@@ -1,0 +1,211 @@
+//Text
+
+$very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+//Background gradient:
+
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+//Neutral Text
+
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+
+//Dividers
+
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+$medium: 980px;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: linear-gradient($soft-violet, $soft-blue);
+  @media (min-width: $medium) {
+    align-items: center;
+  }
+}
+
+.card {
+  width: 330px;
+  padding: 0 25px 50px;
+  margin: 150px auto 50px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  background-color: white;
+
+  &-image {
+    position: relative;
+    padding: 20px;
+    height: 100px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+
+    &::before {
+      top: 0px;
+      height: 100%;
+      background-image: url('../images/bg-pattern-mobile.svg');
+      background-size: cover;
+      background-position: bottom;
+    }
+
+    &::after {
+      top: 25px;
+      height: 212px;
+      background-image: url('../images/illustration-woman-online-mobile.svg');
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-150px);
+    }
+
+    img {
+      transform: translateY(-155px);
+    }
+  }
+
+  &-header {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: $very-dark-desaturated-blue;
+  }
+
+  &-body {
+    .faq {
+      padding: 20px 0;
+      border-bottom: 1px solid $light-grayish-blue;
+      overflow: hidden;
+
+      input {
+        display: none;
+      }
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 400;
+        color: $very-dark-grayish-blue;
+
+        img {
+          width: auto;
+          height: 7.5px;
+          transition: transform 0.2s ease-out;
+        }
+      }
+
+      p {
+        height: 0;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+      }
+      // checked state (avoid js script)
+      input:checked {
+        + label {
+          font-weight: 700;
+          color: $very-dark-desaturated-blue;
+          img {
+            transform: rotate(180deg);
+          }
+        }
+        + label + p {
+          height: 100%;
+          padding: 15px 20px 0 0;
+          font-size: 1rem;
+          color: $dark-grayish-blue;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  @media (min-width: $medium) {
+    display: flex;
+    position: relative;
+    width: 920px;
+    margin: auto;
+    padding: 30px 90px 80px;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -72px;
+      top: 195px;
+      height: 150px;
+      width: 150px;
+      background-image: url('../images/illustration-box-desktop.svg');
+      background-position: top;
+      z-index: 2;
+    }
+
+    &-image {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+
+      &::before {
+        width: 880px;
+        height: 850px;
+        left: -470px;
+        top: -260px;
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-size: cover;
+        background-position: left;
+        background-repeat: no-repeat;
+      }
+
+      &::after {
+        top: 30px;
+        left: -80px;
+        width: 480px;
+        height: 370px;
+        background-image: url('../images/illustration-woman-online-desktop.svg');
+        transform: translateY(20px);
+      }
+
+      img {
+        width: 100%;
+        transform: translateY(0);
+      }
+    }
+
+    &-body {
+      margin-left: auto;
+      width: 50%;
+    }
+    &-header {
+      text-align: left;
+    }
+  }
+}
